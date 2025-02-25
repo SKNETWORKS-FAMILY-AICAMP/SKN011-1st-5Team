@@ -10,13 +10,24 @@ connection = mysql.connector.connect(
 
 cursor = connection.cursor()
 
+# hyundai
 with open('../data/faq_hd.json', 'r', encoding='utf-8') as file:
-    data = json.load(file)
+    hd_data = json.load(file)
 
-for question, answer in data.items():
+for question, answer in hd_data.items():
     if question and answer:
         insert_query = "insert into FAQ(QUESTION, ANSWER) values (%s,%s)"
         cursor.execute(insert_query, (question, answer)) 
+
+# kia
+with open('../data/faq_kia.json', 'r', encoding='utf-8') as file:
+    kia_data = json.load(file)
+
+for d in kia_data:
+    question = d['Q']
+    answer = d['A']
+    insert_query = "insert into FAQ(QUESTION, ANSWER) values (%s,%s)"
+    cursor.execute(insert_query, (question, answer)) 
 
 connection.commit()
 
