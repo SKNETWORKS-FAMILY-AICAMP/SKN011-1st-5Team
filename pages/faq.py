@@ -1,47 +1,34 @@
 import streamlit as st
+import json
+
+def load_faq_data(brand):
+    file_name = "faq_hyundai.json" if brand == "현대" else "faq_kia.json"
+    
+    try:
+        with open(file_name, "r", encoding="utf-8") as file:
+            return json.load(file)
+    except FileNotFoundError:
+        st.error(f"🚨 {file_name} 파일을 찾을 수 없습니다.")
+        return []
 
 def run():
-    st.title("❓ 자주 묻는 질문 FAQ")
-    st.header("브랜드 선택")
+    st.title("❓ 자주 묻는 질문 (FAQ)")
 
-    brands = ["현대", "기아"]
-    categories = ["전체","차량구매", "차량옵션", "차량정비", "할부", "보증 및 A/S", "할인 및 프로모션", "전기차"]
+    selected_brand = st.radio("브랜드를 선택하세요:", ["현대", "기아"], horizontal=True)
 
-    selected_brand = st.selectbox("브랜드를 선택하세요:", brands)
-    selected_category = st.radio("카테고리를 선택하세요:", categories, horizontal=True)
+    faq_data = load_faq_data(selected_brand)
 
+    search_query = st.text_input("🔍 검색할 단어를 입력하세요:")
 
-#FAQ data 저장 
-    faq_data = {
-        "현대" : {
-            "차량구매" : [("현대-차량구매-질문","현대-차량구매-답변")],
-            "차량옵션" : [("현대-차량옵션-질문","현대-차량옵션-답변")],
-            "차량정비" : [("현대-차량정비질문","현대-차량정비-답변")],
-            "할부" : [("현대-할부-질문","현대-할부-답변")],
-            "보증 및 A/S" : [("현대-보증 및 A/S-질문","현대-보증 및 A/S-답변")],
-            "할인 및 프로모션" : [("현대-할인 및 프로모션-질문","현대-할인 및 프로모션-답변")],
-            "전기차" : [("현대-전기차-질문","현대-전기차-답변")]
-        },
-        "기아" : {
-            "차량구매" : [("기아-차량구매-질문","기아-차량구매-답변")],
-            "차량옵션" : [("기아-차량옵션-질문","기아-차량옵션-답변")],
-            "차량정비" : [("기아-차량정비질문","기아-차량정비-답변")],
-            "할부" : [("기아-할부-질문","기아-할부-답변")],
-            "보증 및 A/S" : [("기아-보증 및 A/S-질문","기아-보증 및 A/S-답변")],
-            "할인 및 프로모션" : [("기아-할인 및 프로모션-질문","기아-할인 및 프로모션-답변")],
-            "전기차" : [("기아-전기차-질문","기아-전기차-답변")]
-        }
-    }
-    if selected_category == "전체":
-        for category, faqs in faq_data[selected_brand].items():
-            for question, answer in faqs:
-                with st.expander(question):
-                    st.write(answer)
+    if search_query:
+        filtered_faqs = [item for item in faq_data if search_query.lower() in item["Q"].lower()]
     else:
-        # 현대&기아&카테고리
-        if selected_category in faq_data[selected_brand]:
-            for question, answer in faq_data[selected_brand][selected_category]:
-                with st.expander(question):  
-                    st.write(answer)
-        else:
-            st.write("📌 해당 브랜드의 FAQ가 없습니다.")
+        filtered_faqs = faq_data  # 검색어 없을 경우 전체 표시
+
+    
+    if filtered_faqs:
+        for item in filtered_faqs:
+            with st.expander(item["Q"]):
+                st.write(item["A"])
+    else:
+        st.warning("❌ 검색 결과가 없습니다.")
