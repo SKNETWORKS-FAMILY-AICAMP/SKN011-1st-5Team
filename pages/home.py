@@ -15,7 +15,7 @@ def run():
 
     with col2:
         st.header("📌 출처")
-        st.write("출처 1 ")
+        st.write("출처 1")
         st.write("출처 2")
 
             
