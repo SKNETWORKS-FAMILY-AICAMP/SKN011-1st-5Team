@@ -163,4 +163,50 @@ def get_Consumer_list():
     
     return consumer_list
 
+
+
+# cardb & tbl_car 테이블 존재 확인
+def check_car_db_tbl():
+    check_exist = False
+    
+    try:
+        connection = mysql.connector.connect(
+            host="localhost",
+            user="ohgiraffers",
+            password="ohgiraffers",
+            database="cardb"
+        )
+        
+        if connection.is_connected():
+            print("MySQL에 성공적으로 연결되었습니다.")
+            
+            cursor = connection.cursor()
+
+            # EXISTS 쿼리 실행
+            table_name = "tbl_car"
+            query = """
+                    SELECT EXISTS (
+                        SELECT 1 
+                        FROM INFORMATION_SCHEMA.TABLES 
+                        WHERE TABLE_SCHEMA = %s AND TABLE_NAME = %s
+                    )
+                    """
+            cursor.execute(query, ("cardb", table_name))
+
+            # 결과 확인
+            if cursor.fetchone()[0]:
+                print(f"테이블 '{table_name}'이(가) 존재합니다.")
+                check_exist = True
+
+        else:
+            print("MySQL 연결에 실패했습니다.")
+        
+    except Exception as e:
+        print(e)
+
+    finally:
+        cursor.close()
+        connection.close()
+                
+    return check_exist
 ##################################################
