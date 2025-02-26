@@ -308,7 +308,7 @@
             </li>
         </ul>
     </div>
-    
+  <hr>
   <div class="section">
         <h2>📌 주요 산출물</h2>
         <ul>
