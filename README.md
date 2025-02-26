@@ -321,9 +321,7 @@
 <br/><br/>
 # 7️⃣ ERD
 <p align="center">
-  <a href="[https://www.donga.com/news/article/all/20210204/105290040/1">
-    <img width="800" alt="image" src="https://github.com/user-attachments/assets/653f6513-3ab6-4d6a-adea-a09ca85589ef](https://www.notion.so/image/attachment%3A550c6595-d9f5-4951-a857-af3b7c284d16%3Aproject_1.png?table=block&id=1a564913-6c11-8010-924f-fe0b099eb94b&spaceId=2e42b292-3597-492a-9d2f-caaf0ff36a48&width=1530&userId=3396fb9c-7a26-47c3-a217-0f0ddd9c81fb&cache=v2)" />
-  </a>
+  <img src="https://github.com/user-attachments/assets/2e299b52-238c-4ca3-a1ed-a7c64f26392e" alt="README ERD파일 추가">
 </p>
 <br/><br/>
 
