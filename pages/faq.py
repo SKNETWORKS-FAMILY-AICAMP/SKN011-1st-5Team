@@ -25,15 +25,16 @@ def load(query):
     connection.close()
     return data
 
-def search(word):
-    pass
-
-def show(data):
+def show(data, word=None):
     df = pd.DataFrame(data, columns=["질문", "답변"])
+
+    if word:
+        df = df[df["질문"].str.contains(word, case=False, na=False) | 
+            df["답변"].str.contains(word, case=False, na=False)]
     
-    for index, row in df.iterrows():
-        with st.expander(row["질문"]):  # 질문을 눌러야 답변이 보이게 설정
-            st.write(row["답변"])  # 답변 표시
+    for _, row in df.iterrows():
+        with st.expander(row["질문"]):
+            st.write(row["답변"]) 
 
 
 def run():
@@ -43,19 +44,17 @@ def run():
 
     selected_brand = st.radio("🚗 브랜드를 선택하세요:", ["현대", "기아"], horizontal=True)
 
-    # word = st.text_input("🔍 검색할 단어를 입력하세요:")
-    # if word:
-    #     search(word)
+    word = st.text_input("🔍 검색할 단어를 입력하세요:")
 
     if selected_brand == "현대":
         query = "select question, answer from faq where company_id=0"
         data = load(query)
-        show(data)
+        show(data, word)
         
     elif selected_brand == "기아":
         query = "select question, answer from faq where company_id=1"
         data = load(query)
-        show(data)
+        show(data, word)
 
     
 
