@@ -62,7 +62,11 @@ def run():
     visible_df = filtered_df.iloc[:st.session_state.start_row + rows_per_page]
     
     st.write("### 연령대별 상세 구매 데이터")
-    st.dataframe(visible_df[['age_group', 'company', 'model', 'fuel', 'pur_count']], width=1400)
+    df_display = visible_df[['age_group', 'company', 'model', 'fuel', 'pur_count']].reset_index(drop=True)
+    df_display.insert(0, '순위', df_display.index + 1)  # 인덱스를 1부터 시작하는 "번호" 컬럼 추가
+
+    # Streamlit에서 기본 인덱스 열(0,1,2...) 제거
+    st.dataframe(df_display, width=1400, hide_index=True)
 
     if st.session_state.start_row + rows_per_page < max_rows:
         if st.button("더 보기"):
