@@ -9,13 +9,15 @@ def run():
 
     with col1:
         st.header("주요 기능")
-        st.write("- 연령대별 많이 구매하는 차종 및 차량의 금액대")
-        st.write("- FAQ 페이지: 신차 구매 관련 자주 묻는 질문 모음")
+        st.write("- 연령대별 자동차 등록 현황 (bar 그래프)")
+        st.write("- 연령대별 국내 자동차 선호도 현황 (pie 그래프)")
+        st.write("- 연령대별 국내 자동차 선호도 현황 (pie 그래프)")
 
 
     with col2:
         st.header("📌 출처")
-        st.write("출처 1")
-        st.write("출처 2")
+        st.markdown("[자동차 신차구입 조회 사이트](https://www.car365.go.kr/web/contents/newcar_analysis.do)")
+        st.markdown("[현대 차량 구매 FAQ](https://www.hyundai.com/kr/ko/e/customer/center/faq)")
+        st.markdown("[기아 차량 구매 FAQ](https://www.kia.com/kr/customer-service/center/faq)")
 
             
