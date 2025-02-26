@@ -5,7 +5,7 @@
 > 팀 명: 오댕🍥 <br/>
 > 개발 기간: 2025.02.25 - 2025.02.26 <br/>
 
-## 🍀 팀원 소개
+## 🍀 팀원 소개  
 
 <table>
   <thead>
@@ -22,7 +22,7 @@
       </a><br />
     </td>
     <td align="center">
-      <a href="https://github.com/minjung226](https://github.com/minjung2266">
+      <a href="https://github.com/minjung2266">
         <img src="https://github.com/minjung2266.png" width="150" alt="minjung"/><br /><hr/>
         이민정
       </a><br />
@@ -285,12 +285,47 @@
 </table>
 
 <br/><br/>
-
-# 6️⃣ ERD
+# 6️⃣ 주요기능
+  <div class="section">
+        <h2>📌 주요 기능</h2>
+        <ul>
+            <li><strong>🚗 자동차 등록 현황 시각화</strong>
+                <ul>
+                    <li>연령대별 자동차 등록 현황 (bar 그래프)</li>
+                    <li>연령대별 국내 자동차 선호도 현황 (pie 그래프)</li>
+                    <li>연령대별 수입 자동차 선호도 현황 (pie 그래프)</li>
+                </ul> <br>
+            </li>
+            <li><strong>🖥️ 제조사 별 신차 구매 트렌드 분석</strong>
+                <ul>
+                    <li>국내 자동차 / 수입 자동차 제조사 별 모델 선호도 분석</li>
+                </ul> <br>
+            </li>
+            <li><strong>😀 통합된 신차구매 FAQ 플랫폼 제공</strong>
+                <ul>
+                    <li>신차 등록 데이터와 현대자동차, 기아자동차 FAQ 데이터를 연동한 FAQ 서비스 제공</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+  <hr>
+  <div class="section">
+        <h2>📌 주요 산출물</h2>
+        <ul>
+            <li>📈 자동차 소유자, 모델, 연령 간의 ERD</li>
+            <li>📊 연령별 자동차 등록 현황 시각화 결과</li>
+            <li>💡 FAQ 인터페이스 제공</li>
+        </ul>
+    </div>
 
 <br/><br/>
+# 7️⃣ ERD
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2e299b52-238c-4ca3-a1ed-a7c64f26392e" alt="README ERD파일 추가">
+</p>
+<br/><br/>
 
-# 7️⃣ 수행 결과 
+# 8️⃣ 수행 결과 
 
 <br/><br/>
 
