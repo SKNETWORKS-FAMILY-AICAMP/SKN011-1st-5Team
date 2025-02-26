@@ -221,14 +221,14 @@
 
 <br/>
 
-### 💡 국산 신차 판매 현황
-![korea01](https://github.com/user-attachments/assets/4e7d3c85-bd4c-4129-b377-daa2fc291c9d)
+### 💡 국산 신차 판매 현황황
+![korea01](https://github.com/user-attachments/assets/92d7cbe5-8ce3-4b61-88c8-cd133c148d2b)
 ![korea02](https://github.com/user-attachments/assets/99c21cce-1cc3-404d-b6d9-d2039a889fd8)
 
 <br/>
 
 ### ✨ 수입 신차 판매 현황
-![abroad01](https://github.com/user-attachments/assets/d2f5283a-167e-4a09-86fd-cd5d95c78578)
+![abroad01](https://github.com/user-attachments/assets/3c5dd3b2-97c1-4361-8478-4449aa1eb919)
 ![abroad02](https://github.com/user-attachments/assets/13dceaf3-3147-4052-a394-22d0b335005d)
 
 <br/>
