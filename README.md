@@ -216,7 +216,7 @@
 # 8️⃣ 수행 결과 
 
 ### 시연 영상
-[시연영상 보러가기](https://www.notion.so/ohgiraffers/1a4649136c1180de86d2e1c449f8a36b?pvs=4#1a6649136c1180f88c97da77b79bbe8e)
+[시연영상 보러가기](https://ohgiraffers.notion.site/1a6649136c1180fe808efe96104a0683?pvs=4)
 
 ### 🏠 HOME
 ![home01](https://github.com/user-attachments/assets/6e4a73c8-9466-4c34-94bc-081099c0b8eb)
