@@ -29,37 +29,33 @@ def search(word):
     pass
 
 def show(data):
-    row_count = len(data)  # 데이터 개수
-    default_height = 600  # 기본 높이
+    df = pd.DataFrame(data, columns=["질문", "답변"])
+    
+    for index, row in df.iterrows():
+        with st.expander(row["질문"]):  # 질문을 눌러야 답변이 보이게 설정
+            st.write(row["답변"])  # 답변 표시
 
-    # 데이터 개수에 따라 높이 자동 조절 (최대 800px)
-    calculated_height = min(default_height + (row_count * 20), 800)
-
-    st.dataframe(data, use_container_width=True, height=calculated_height)
-
-create_connector()
-create_cursor()
 
 def run():
+    create_connector()
+    create_cursor()
     st.title("❓ 자주 묻는 질문 (FAQ)")
 
-    selected_brand = st.radio("브랜드를 선택하세요:", ["현대", "기아"], horizontal=True)
+    selected_brand = st.radio("🚗 브랜드를 선택하세요:", ["현대", "기아"], horizontal=True)
 
-    word = st.text_input("🔍 검색할 단어를 입력하세요:")
-    if word:
-        search(word)
+    # word = st.text_input("🔍 검색할 단어를 입력하세요:")
+    # if word:
+    #     search(word)
 
     if selected_brand == "현대":
         query = "select question, answer from faq where company_id=0"
         data = load(query)
         show(data)
         
-        # print(data)
     elif selected_brand == "기아":
         query = "select question, answer from faq where company_id=1"
         data = load(query)
-        st.dataframe(data, width=800)
-        # print(data)
+        show(data)
 
     
 
@@ -75,6 +71,3 @@ def run():
     #             st.write(item["A"])
     # else:
     #     st.warning("❌ 검색 결과가 없습니다.")
-
-# cursor.close()
-# connection.close()
