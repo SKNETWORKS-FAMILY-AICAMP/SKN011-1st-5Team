@@ -180,8 +180,8 @@
             <li><strong>🚗 자동차 등록 현황 시각화</strong>
                 <ul>
                     <li>연령대별 자동차 등록 현황 (bar 그래프)</li>
-                    <li>연령대별 국내 자동차 선호도 현황 (pie 그래프)</li>
-                    <li>연령대별 수입 자동차 선호도 현황 (pie 그래프)</li>
+                    <li>연령대별 국내 자동차 선호도 현황 (표 & pie 그래프)</li>
+                    <li>연령대별 수입 자동차 선호도 현황 (표 & pie 그래프)</li>
                 </ul> <br>
             </li>
             <li><strong>🖥️ 제조사 별 신차 구매 트렌드 분석</strong>
@@ -215,6 +215,33 @@
 
 # 8️⃣ 수행 결과 
 
+### 🏠 HOME
+![home01](https://github.com/user-attachments/assets/6e4a73c8-9466-4c34-94bc-081099c0b8eb)
+![home02](https://github.com/user-attachments/assets/adc619ee-3c0f-4cd1-8caf-74e44a512982)
+
+<br/>
+
+### 💡 국산 신차 판매 현황
+![korea01](https://github.com/user-attachments/assets/4e7d3c85-bd4c-4129-b377-daa2fc291c9d)
+![korea02](https://github.com/user-attachments/assets/99c21cce-1cc3-404d-b6d9-d2039a889fd8)
+
+<br/>
+
+### ✨ 수입 신차 판매 현황
+![abroad01](https://github.com/user-attachments/assets/d2f5283a-167e-4a09-86fd-cd5d95c78578)
+![abroad02](https://github.com/user-attachments/assets/13dceaf3-3147-4052-a394-22d0b335005d)
+
+<br/>
+
+### ❓ FAQ
+![faq01](https://github.com/user-attachments/assets/658abf33-6897-4737-a8f6-8435bf79ec09)
+![faq02](https://github.com/user-attachments/assets/f7a0538a-808f-4861-9baf-b37e9e45c160)
+
 <br/><br/>
 
 # 8️⃣ 한 줄 회고
+- 호진
+- 준희
+- 민정
+- 유경
+- 채은
