@@ -285,12 +285,49 @@
 </table>
 
 <br/><br/>
-
-# 6️⃣ ERD
+# 6️⃣ 주요기능
+    <div class="section">
+        <h2>📌 주요 기능</h2>
+        <ul>
+            <li><strong>🚗 자동차 등록 현황 시각화</strong>
+                <ul>
+                    <li>연령대별 자동차 등록 현황 (bar 그래프)</li>
+                    <li>연령대별 국내 자동차 선호도 현황 (pie 그래프)</li>
+                    <li>연령대별 수입 자동차 선호도 현황 (pie 그래프)</li>
+                </ul>
+            </li>
+            <li><strong>🖥️ 제조사 별 신차 구매 트렌드 분석</strong>
+                <ul>
+                    <li>국내 자동차 / 수입 자동차 제조사 별 모델 선호도 분석</li>
+                </ul>
+            </li>
+            <li><strong>😀 통합된 신차구매 FAQ 플랫폼 제공</strong>
+                <ul>
+                    <li>신차 등록 데이터와 현대자동차, 기아자동차 FAQ 데이터를 연동한 FAQ 서비스 제공</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="section">
+        <h2>📌 주요 산출물</h2>
+        <ul>
+            <li>📈 자동차 소유자, 모델, 연령 간의 ERD</li>
+            <li>📊 연령별 자동차 등록 현황 시각화 결과</li>
+            <li>💡 FAQ 인터페이스 제공</li>
+        </ul>
+    </div>
 
 <br/><br/>
+# 7️⃣ ERD
+<p align="center">
+  <a href="[https://www.donga.com/news/article/all/20210204/105290040/1">
+    <img width="800" alt="image" src="https://github.com/user-attachments/assets/653f6513-3ab6-4d6a-adea-a09ca85589ef](https://www.notion.so/image/attachment%3A550c6595-d9f5-4951-a857-af3b7c284d16%3Aproject_1.png?table=block&id=1a564913-6c11-8010-924f-fe0b099eb94b&spaceId=2e42b292-3597-492a-9d2f-caaf0ff36a48&width=1530&userId=3396fb9c-7a26-47c3-a217-0f0ddd9c81fb&cache=v2)" />
+  </a>
+</p>
+<br/><br/>
 
-# 7️⃣ 수행 결과 
+# 8️⃣ 수행 결과 
 
 <br/><br/>
 
