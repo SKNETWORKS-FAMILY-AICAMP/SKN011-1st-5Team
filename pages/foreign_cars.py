@@ -24,6 +24,16 @@ def run():
 
     with open("data.json", "r", encoding="utf-8") as file:
         data = json.load(file)
+        data['orgin']
+        total_data=[
+            Consumer(orgin, company, model, ........),
+            Consumer(orgin, company, model, ........),
+            Consumer(orgin, company, model, ........),
+            Consumer(orgin, company, model, ........),
+            Consumer(orgin, company, model, ........),
+            Consumer(orgin, company, model, ........),
+            Consumer(orgin, company, model, ........),            
+        ]
 
     df = pd.DataFrame(data)
     
