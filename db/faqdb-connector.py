@@ -29,7 +29,7 @@ for d in kia_data:
     answer = d['A']
     query = "insert into FAQ(QUESTION, ANSWER, COMPANY_ID) values (%s,%s,%s)"
     values = (question, answer,1)
-    cursor.execute(query, values) 
+    cursor.execute(query, values)
 
 connection.commit()
 
