@@ -215,13 +215,16 @@
 
 # 8️⃣ 수행 결과 
 
+### 시연 영상
+
+
 ### 🏠 HOME
 ![home01](https://github.com/user-attachments/assets/6e4a73c8-9466-4c34-94bc-081099c0b8eb)
 ![home02](https://github.com/user-attachments/assets/adc619ee-3c0f-4cd1-8caf-74e44a512982)
 
 <br/>
 
-### 💡 국산 신차 판매 현황황
+### 💡 국산 신차 판매 현황
 ![korea01](https://github.com/user-attachments/assets/92d7cbe5-8ce3-4b61-88c8-cd133c148d2b)
 ![korea02](https://github.com/user-attachments/assets/99c21cce-1cc3-404d-b6d9-d2039a889fd8)
 
