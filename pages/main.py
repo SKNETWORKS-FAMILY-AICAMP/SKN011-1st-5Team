@@ -14,7 +14,7 @@ page = st.sidebar.radio(
 
 
 def run_selected_page(page_name):
-    if page_name == "🏠 Home":
+    if page_name == "Home":
         home.run()
     elif page_name == "💡 국산 신차 판매 현황":
         korean_cars.run()
