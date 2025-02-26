@@ -1,31 +1,34 @@
-import streamlit as st
+import sys
+import os
+
+# 현재 파일(foreign_cars.py) 기준 상위 디렉토리를 sys.path에 추가
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+import streamlit as st  
 import pandas as pd
 import matplotlib.pyplot as plt
-import json
+import db.sql as sql 
+import matplotlib.font_manager as fm
 
-st.set_page_config(layout="wide")
+plt.rcParams['font.family'] = 'Malgun Gothic'
+plt.rcParams['axes.unicode_minus'] = False
 
 def run():
-    st.markdown(
-        """
-        <style>
-        .block-container {
-            padding-top: 1.5rem;
-            padding-bottom: 1rem;
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-    
     st.title("💡 국산 신차 판매 현황")
 
-    with open("data.json", "r", encoding="utf-8") as file:
-        data = json.load(file)
+    try:
+        consumers = sql.get_Consumer_list()
 
-    df = pd.DataFrame(data)
+        # 데이터가 없거나 오류 발생 시 방어 코드
+        if consumers is None or len(consumers) == 0:
+            st.error("❌ 데이터베이스에서 데이터를 불러오지 못했습니다.")
+            return
+    except Exception as e:
+        st.error(f"❌ 데이터를 불러오는 중 오류 발생: {e}")
+        return
+
+    data = [(c.origin, c.company, c.model, c.fuel, c.age, c.pur_count) for c in consumers]
+    df = pd.DataFrame(data, columns=['origin', 'company', 'model', 'fuel', 'age', 'pur_count'])
     
     df = df[df['origin'] == 0]
 
@@ -58,24 +61,39 @@ def run():
     max_rows = len(filtered_df)
     visible_df = filtered_df.iloc[:st.session_state.start_row + rows_per_page]
     
-    col1, col2 = st.columns([2, 1])
+    st.write("### 연령대별 상세 구매 데이터")
+    st.dataframe(visible_df[['age_group', 'company', 'model', 'fuel', 'pur_count']], width=1400)
+
+    if st.session_state.start_row + rows_per_page < max_rows:
+        if st.button("더 보기"):
+            st.session_state.start_row += rows_per_page
+            st.rerun()
     
-    with col1:
-        st.write("### 연령대별 상세 구매 데이터")
-        st.dataframe(visible_df[['age_group', 'company', 'model', 'fuel', 'pur_count']], width=1200)
+    # 연령대별 제조사 비율 파이 차트
+    st.write("### 연령대별 제조사 비율")
     
-        if st.session_state.start_row + rows_per_page < max_rows:
-            if st.button("더 보기"):
-                st.session_state.start_row += rows_per_page
-                st.rerun()
+    fig, ax = plt.subplots(figsize=(16, 10))
+    company_counts = filtered_df.groupby('company').sum(numeric_only=True)['pur_count']
+    company_counts = company_counts.sort_values(ascending=False).head(10)  # 상위 10개만 선택
     
-    with col2:
-        st.write("### 연령대별 제조사 비율")
-        fig, ax = plt.subplots(figsize=(6, 6))
-        company_counts = filtered_df.groupby('company').sum(numeric_only=True)['pur_count']
-        ax.pie(company_counts, labels=company_counts.index, autopct='%1.1f%%', startangle=90)
-        ax.axis('equal')
-        st.pyplot(fig)
+
+    colors = plt.cm.Paired.colors[:len(company_counts)]
+
+    wedges, _, autotexts = ax.pie(
+        company_counts,
+        labels=None,  
+        autopct='%1.1f%%',  
+        startangle=90,
+        colors=colors,
+        textprops={'fontsize': 20, 'color': 'white'} 
+    )
+
+    ax.axis('equal')
+
+    legend_labels = [f"{company} ({percent:.1f}%)" for company, percent in zip(company_counts.index, (company_counts / company_counts.sum()) * 100)]
+    ax.legend(wedges, legend_labels, loc="center left", bbox_to_anchor=(1, 0.5), fontsize=20)
+    
+    st.pyplot(fig)
 
 if __name__ == "__main__":
     run()
