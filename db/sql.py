@@ -1,6 +1,22 @@
 ########## IMPORT
 import mysql.connector
-from car_class import *
+
+##################################################
+
+
+
+########## Class
+class Consumer():
+    def __init__(self, origin, company, model, fuel, age, pur_count):
+        self.origin = origin
+        self.company = company
+        self.model = model
+        self.fuel = fuel
+        self.age = age
+        self.pur_count = pur_count
+        
+    def __str__(self):
+        return f"origin={self.origin}, company={self.company}, model={self.model}, fuel={self.fuel}, age={self.age}, pur_count={self.pur_count}"
 ##################################################
 
 
@@ -16,7 +32,7 @@ def create_car_db():
             host="localhost",
             user="ohgiraffers",
             password="ohgiraffers",
-            database="menudb"
+            database="cardb"
         )
         
         if connection.is_connected():
@@ -25,20 +41,17 @@ def create_car_db():
             cursor = connection.cursor()
             
             sql = """
-                CREATE DATABASE IF NOT EXISTS cardb;
-                USE cardb;
-
-                CREATE TABLE tbl_car (
+                CREATE TABLE IF NOT EXISTS tbl_car (
                     car_id    INT PRIMARY KEY AUTO_INCREMENT,
                     
-                    origin    TINYINT NOT NULL CHECK (origin IN (0, 1)),
+                    origin    INT NOT NULL,
                     company   VARCHAR(100) NOT NULL,
                     model     VARCHAR(100) NOT NULL,
                     fuel      VARCHAR(50) NOT NULL,
-                    age       INT,
-                    pur_count INT,
+                    age       INT NOT NULL,
+                    pur_count INT NOT NULL
                     
-                    --INDEX idx_analysis (origin, age, model)
+                    -- INDEX idx_analysis (origin, age, model)
                 );
                 """
             cursor.execute(sql)         
@@ -68,7 +81,7 @@ def insert_car_db_to_Consumer(consumer_list):
             host="localhost",
             user="ohgiraffers",
             password="ohgiraffers",
-            database="menudb"
+            database="cardb"
         )
         
         if connection.is_connected():
@@ -77,7 +90,7 @@ def insert_car_db_to_Consumer(consumer_list):
             cursor = connection.cursor()
             
             sql = """
-                INSERT INTO CarsWithConsumers (origin, company, model, fuel, age, pur_count)
+                INSERT INTO tbl_car (origin, company, model, fuel, age, pur_count)
                 VALUES (%s, %s, %s, %s, %s, %s)
                 """
 
@@ -116,7 +129,7 @@ def get_Consumer_list():
             host="localhost",
             user="ohgiraffers",
             password="ohgiraffers",
-            database="menudb"
+            database="cardb"
         )
         
         if connection.is_connected():

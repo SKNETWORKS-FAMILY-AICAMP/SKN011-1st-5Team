@@ -1,7 +1,6 @@
 ########## IMPORT
 from enum import Enum
 import pandas as pd
-from car_class import *
 
 ##################################################
 
@@ -15,13 +14,26 @@ START_ROW_INDEX = 20
 
 
 
-########## Enum
+########## Class
 class COL_INDEX(Enum):
     COMPANY = 0
     MODEL = 1
     FUEL = 2
     PURCHASED_COUNT = 3
 
+
+
+class Consumer():
+    def __init__(self, origin, company, model, fuel, age, pur_count):
+        self.origin = origin
+        self.company = company
+        self.model = model
+        self.fuel = fuel
+        self.age = age
+        self.pur_count = pur_count
+        
+    def __str__(self):
+        return f"origin={self.origin}, company={self.company}, model={self.model}, fuel={self.fuel}, age={self.age}, pur_count={self.pur_count}"
 ##################################################
 
 
