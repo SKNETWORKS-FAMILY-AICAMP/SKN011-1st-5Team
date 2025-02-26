@@ -286,7 +286,7 @@
 
 <br/><br/>
 # 6️⃣ 주요기능
-    <div class="section">
+  <div class="section">
         <h2>📌 주요 기능</h2>
         <ul>
             <li><strong>🚗 자동차 등록 현황 시각화</strong>
@@ -309,7 +309,7 @@
         </ul>
     </div>
     
-    <div class="section">
+  <div class="section">
         <h2>📌 주요 산출물</h2>
         <ul>
             <li>📈 자동차 소유자, 모델, 연령 간의 ERD</li>
