@@ -113,21 +113,33 @@
 
 # 3️⃣ 기술 스택
 
-<p align="center">
+### <협업 및 소통 툴>
+
+<p>
   <img src="https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white">
   <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white">
   <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
   <img src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=vscode&logoColor=white">
   <img src="https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white">
 </p>
-<p align="center">
+
+### <UI 설계>
+<p>
+  <img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white">
+</p>
+
+### <Frontend 및 웹 크롤러>
+
+<p>
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white">
   <img src="https://img.shields.io/badge/Streamlit-%23FE4B4B.svg?style=for-the-badge&logo=streamlit&logoColor=white">
   <img src="https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=Selenium&logoColor=white">
-  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=MySQL&logoColor=white">
+  
 </p>
-<p align="center">
-  <img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white">
+
+### <DB 및 데이터 시각화>
+<p>
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=MySQL&logoColor=white">
   <img src="https://img.shields.io/badge/pandas-150458.svg?style=for-the-badge&logo=pandas&logoColor=white">
   <img src="https://img.shields.io/badge/matplotlib-0077B5.svg?style=for-the-badge&logo=matplotlib&logoColor=white">
 </p>
@@ -240,6 +252,10 @@
 ![faq01](https://github.com/user-attachments/assets/658abf33-6897-4737-a8f6-8435bf79ec09)
 ![faq02](https://github.com/user-attachments/assets/f7a0538a-808f-4861-9baf-b37e9e45c160)
 
+### Figma를 활용한 예상 UI
+![image](https://github.com/user-attachments/assets/617b4707-3241-4967-9a68-e9d6519de65e)
+
+
 <br/><br/>
 
 # 8️⃣ 한 줄 회고
@@ -256,7 +272,6 @@
 - 약 3주간 배운 이론들을 프로젝트에 활용할 수 있어 재미있었고, 협업 과정에서 git 활용 방법에 대해 배워서 유익한 시간이었습니다.
 
  
-
 👩🏻 유경
 
 - 수업 시간에 배웠던 것들을 참고하면서 여러 문제들을 직접 해결할 수 있었습니다! 짧은 시간이었지만 협업에서 중요한 git 사용법도 확실히 익힐 수 있었습니다. 다들 고생 많으셨습니다~
